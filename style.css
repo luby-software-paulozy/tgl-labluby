@@ -1,0 +1,426 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body,
+html {
+  height: 100vh;
+  width: 100vw;
+
+  background: #1d1f20;
+  overflow-x: hidden;
+}
+
+header,
+.container {
+  padding: 0 200px 0 120px;
+}
+
+/* HEADER ==============*/
+
+header {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-style: italic;
+
+  border-bottom: 1px solid #aaaaaa63;
+}
+
+header a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  color: #707070;
+}
+
+header .leftNav .logo {
+  width: 95px;
+  height: 73px;
+
+  font-size: 44px;
+  font-weight: 600;
+
+  border-bottom: 4px solid #b5c401;
+  border-radius: 3px;
+}
+
+header .rightNav .linkMenu .fa-arrow-right-from-bracket {
+  margin-left: 15px;
+}
+
+header .leftNav,
+.rightNav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* CONTAINER - NEW BET CONTAINER ==============*/
+
+.container {
+  margin-top: 40px;
+
+  display: flex;
+  gap: 65px;
+}
+
+.newBetContainer {
+  width: 684px;
+}
+
+.newBetContainer .title {
+  margin-bottom: 33px;
+
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 400;
+
+  color: #707070;
+}
+
+.newBetContainer .title strong {
+  font-weight: 700;
+}
+
+.newBetContainer .betOptions span {
+  font-size: 17px;
+  font-weight: 600;
+  color: #707070;
+}
+
+.newBetContainer .betOptions p {
+  font-size: 17px;
+  color: #707070;
+}
+
+.newBetContainer .options {
+  margin: 20px 0 28px 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, 110px);
+  gap: 20px;
+}
+
+.newBetContainer .options .gameType {
+  text-align: center;
+
+  font-size: 14px;
+  font-weight: 600;
+  font-style: italic;
+
+  padding: 9px;
+
+  border: 1px solid #707070;
+  border-radius: 30px;
+
+  cursor: pointer;
+}
+
+.newBetContainer .options .gameType.lotofacil {
+  color: #7f3992;
+  border: 2px solid #7f3992;
+}
+
+.newBetContainer .options .gameType.lotofacil.active {
+  color: #fff;
+  background: #7f3992;
+  border: 2px solid #7f3992;
+}
+
+.newBetContainer .options .gameType.lotofacil:hover {
+  color: #fff;
+  background: #7f3992;
+  border: 2px solid #7f3992;
+}
+
+.newBetContainer .options .gameType.mega {
+  color: #01ac66;
+  border: 2px solid #01ac66;
+}
+
+.newBetContainer .options .gameType.mega.active {
+  color: #fff;
+  background: #01ac66;
+  border: 2px solid #01ac66;
+}
+
+.newBetContainer .options .gameType.mega:hover {
+  color: #fff;
+  background: #01ac66;
+}
+
+.newBetContainer .options .gameType.quina {
+  color: #f79c31;
+  border: 2px solid #f79c31;
+}
+
+.newBetContainer .options .gameType.quina.active {
+  color: #fff;
+  background: #f79c31;
+  border: 2px solid #f79c31;
+}
+
+.newBetContainer .options .gameType.quina:hover {
+  color: #fff;
+  background: #f79c31;
+  border: 2px solid #f79c31;
+}
+
+.newBetContainer .betDescription {
+  width: 648px;
+}
+
+/* CONTAINER - FINALY BET CONTAINER ==============*/
+
+.newBetContainer .finalyBetContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 44px 0 50px 0;
+}
+
+.finalyBetContainer .optionsGameConteiner {
+  display: flex;
+  gap: 25px;
+}
+
+.finalyBetContainer .optionsGameConteiner .optionGame {
+  background: transparent;
+
+  border: 1px solid #27c383;
+  border-radius: 10px;
+
+  padding: 15px;
+
+  font-size: 16px;
+  font-weight: 400;
+  color: #27c383;
+
+  cursor: pointer;
+}
+
+.finalyBetContainer .optionsGameConteiner .optionGame:hover {
+  background: #27c383;
+  border: 1px solid #27c383;
+  color: #fff;
+}
+
+.finalyBetContainer .addToCartContainer {
+  display: flex;
+  gap: 10px;
+
+  justify-content: center;
+  align-items: center;
+
+  width: 209px;
+
+  background: #27c383;
+
+  border: 1px solid #27c383;
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+.finalyBetContainer .addToCartContainer .addToCart {
+  background: transparent;
+  border: none;
+
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+
+  padding: 15px;
+
+  cursor: pointer;
+}
+
+.finalyBetContainer .addToCartContainer i {
+  color: #fff;
+  font-size: 25px;
+}
+
+/* CONTAINER - CART ==============*/
+
+.container .cart {
+  max-height: 460px;
+  width: 317px;
+
+  background: #181a1b;
+
+  padding: 32px 21px;
+
+  border-top: 1px solid #343738;
+  border-right: 1px solid #343738;
+  border-bottom: 1px solid #343738;
+  border-radius: 10px;
+}
+
+.cart .gamePreviewContainer {
+  max-height: 250px;
+  height: 250px;
+
+  margin-bottom: 20px;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.cart .titleCart {
+  font-style: italic;
+  font-size: 24px;
+  font-weight: 600;
+
+  color: #707070;
+}
+
+.cart .gamePreviewContainer .game {
+  margin: 35px 0 40px 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.cart .gamePreviewContainer .game .gameInfo {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.cart .gamePreviewContainer .game .gameInfo i {
+  cursor: pointer;
+}
+
+.gamePreviewContainer .game .gamePreview.lotofacil {
+  padding: 8px;
+  border-left: 4px solid #7f3992;
+  border-radius: 4px;
+
+  font-size: 16px;
+  color: #707070;
+}
+
+.gamePreviewContainer .game .gamePreview.mega {
+  padding: 8px;
+  border-left: 4px solid #27c383;
+  border-radius: 4px;
+
+  font-size: 16px;
+  color: #707070;
+}
+
+.gamePreviewContainer .game .gamePreview.quina {
+  padding: 8px;
+  border-left: 4px solid #f79c31;
+  border-radius: 4px;
+
+  font-size: 16px;
+  color: #707070;
+}
+
+.game .gamePreview .gameTypePrice.lotofacil {
+  margin-right: 10px;
+
+  font-style: italic;
+  font-size: 16px;
+  font-weight: 600;
+  color: #7f3992;
+}
+
+.game .gamePreview .gameTypePrice.mega {
+  margin-right: 10px;
+
+  font-style: italic;
+  font-size: 16px;
+  font-weight: 600;
+  color: #27c383;
+}
+
+.game .gamePreview .gameTypePrice.quina {
+  margin-right: 10px;
+
+  font-style: italic;
+  font-size: 16px;
+  font-weight: 600;
+  color: #f79c31;
+}
+
+.game .gameInfo i {
+  font-size: 16px;
+  color: #888888;
+}
+
+.gameTotalPriceContainer .totalPrice {
+  margin-left: 5px;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.saveGameContainer {
+  margin-top: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 35px;
+  font-weight: 600;
+  color: #27c383;
+
+  cursor: pointer;
+}
+
+.newBetContainer .numbersContainer {
+  margin-top: 30px;
+
+  display: none;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 10px;
+}
+
+.newBetContainer .numbersContainer .number {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #adc0c4;
+
+  cursor: pointer;
+}
+
+.newBetContainer .numbersContainer .number.selected {
+  color: #fff;
+  background: #1ea2d6;
+}
+
+/* .newBetContainer .numbersContainer .number.selected.lotofacil {
+  color: #fff;
+  background: #7f3992;
+}
+
+.newBetContainer .numbersContainer .number.selected.mega {
+  color: #fff;
+  background: #01ac66;
+}
+
+.newBetContainer .numbersContainer .number.selected.quina {
+  color: #fff;
+  background: #f79c31;
+} */

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/90b9f74700.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>TGL: Lotery</title>
+</head>
+<body>
+  
+  <main>
+    <header>
+      <div class="leftNav">
+        <a href="/" class="logo">TGL</a>
+        <a href="" class="linkMenu">Home</a>
+      </div>
+      <div class="rightNav">
+        <a href="/" class="linkMenu">Account</a>
+        <a href="" class="linkMenu">Log out <i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+      </div>
+    </header>
+
+    <div class="container">
+      
+      <div class="newBetContainer">
+        <div class="title">
+          <span><strong>NOVA APOSTA</strong> FOR MEGA-SENA</span>
+        </div>
+
+        <div class="betOptions">
+          <span>Escolha um jogo</span>
+
+          <div class="options">
+            <div data-js='typeGame' class="gameType lotofacil">Lotofácil</div>
+            <div data-js='typeGame' class="gameType mega">Mega-Sena</div>
+            <div data-js='typeGame' class="gameType quina">Lotomania</div>
+          </div>
+
+          <div class="betDescription">
+            <span>Preencha sua aposta</span>
+            <p data-js="betDescription"></p>
+          </div>
+
+          <div data-js="numbersContainer" class="numbersContainer"></div>
+
+          <div class="finalyBetContainer">
+            <div class="optionsGameConteiner">
+              <button data-js='completeGame' class="optionGame">Completar jogo</button>
+              <button data-js='clearGame' class="optionGame">Limpar jogo</button>
+            </div>
+            <div class="addToCartContainer">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <button data-js="addToCart" class="addToCart">Add to cart</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cart">
+        <span class="titleCart">CART</span>
+      
+        <div class="gamePreviewContainer">
+          <div data-js="gamesContainer" class="game"></div>
+        </div>
+        <div class="gameTotalPriceContainer">
+          <div class="titleCart">
+            <span>CART</span>
+            <span class="totalPrice">TOTAL: <span data-js="totalPrice"></span></span>
+          </div>
+        </div>
+        <div class="saveGameContainer">
+          <span class="saveGame">Save</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>

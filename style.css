@@ -103,8 +103,7 @@ header .leftNav,
 .newBetContainer .options {
   margin: 20px 0 28px 0;
 
-  display: grid;
-  grid-template-columns: repeat(3, 110px);
+  display: flex;
   gap: 20px;
 }
 
@@ -115,6 +114,7 @@ header .leftNav,
   font-weight: 600;
   font-style: italic;
 
+  width: 110px;
   padding: 9px;
 
   border: 1px solid #707070;
@@ -123,51 +123,51 @@ header .leftNav,
   cursor: pointer;
 }
 
-.newBetContainer .options .gameType.lotofacil {
+.newBetContainer .options .gameType.Lotofácil {
   color: #7f3992;
   border: 2px solid #7f3992;
 }
 
-.newBetContainer .options .gameType.lotofacil.active {
+.newBetContainer .options .gameType.Lotofácil.active {
   color: #fff;
   background: #7f3992;
   border: 2px solid #7f3992;
 }
 
-.newBetContainer .options .gameType.lotofacil:hover {
+.newBetContainer .options .gameType.Lotofácil:hover {
   color: #fff;
   background: #7f3992;
   border: 2px solid #7f3992;
 }
 
-.newBetContainer .options .gameType.mega {
+.newBetContainer .options .gameType.Mega-Sena {
   color: #01ac66;
   border: 2px solid #01ac66;
 }
 
-.newBetContainer .options .gameType.mega.active {
+.newBetContainer .options .gameType.Mega-Sena.active {
   color: #fff;
   background: #01ac66;
   border: 2px solid #01ac66;
 }
 
-.newBetContainer .options .gameType.mega:hover {
+.newBetContainer .options .gameType.Mega-Sena:hover {
   color: #fff;
   background: #01ac66;
 }
 
-.newBetContainer .options .gameType.quina {
+.newBetContainer .options .gameType.Quina {
   color: #f79c31;
   border: 2px solid #f79c31;
 }
 
-.newBetContainer .options .gameType.quina.active {
+.newBetContainer .options .gameType.Quina.active {
   color: #fff;
   background: #f79c31;
   border: 2px solid #f79c31;
 }
 
-.newBetContainer .options .gameType.quina:hover {
+.newBetContainer .options .gameType.Quina:hover {
   color: #fff;
   background: #f79c31;
   border: 2px solid #f79c31;
@@ -220,7 +220,7 @@ header .leftNav,
   justify-content: center;
   align-items: center;
 
-  width: 209px;
+  padding: 0 15px;
 
   background: #27c383;
 
@@ -303,7 +303,7 @@ header .leftNav,
   cursor: pointer;
 }
 
-.gamePreviewContainer .game .gamePreview.lotofacil {
+.gamePreviewContainer .game .gamePreview.Lotofácil {
   padding: 8px;
   border-left: 4px solid #7f3992;
   border-radius: 4px;
@@ -312,7 +312,7 @@ header .leftNav,
   color: #707070;
 }
 
-.gamePreviewContainer .game .gamePreview.mega {
+.gamePreviewContainer .game .gamePreview.Mega-Sena {
   padding: 8px;
   border-left: 4px solid #27c383;
   border-radius: 4px;
@@ -321,7 +321,7 @@ header .leftNav,
   color: #707070;
 }
 
-.gamePreviewContainer .game .gamePreview.quina {
+.gamePreviewContainer .game .gamePreview.Quina {
   padding: 8px;
   border-left: 4px solid #f79c31;
   border-radius: 4px;
@@ -330,7 +330,7 @@ header .leftNav,
   color: #707070;
 }
 
-.game .gamePreview .gameTypePrice.lotofacil {
+.game .gamePreview .gameTypePrice.Lotofácil {
   margin-right: 10px;
 
   font-style: italic;
@@ -339,7 +339,7 @@ header .leftNav,
   color: #7f3992;
 }
 
-.game .gamePreview .gameTypePrice.mega {
+.game .gamePreview .gameTypePrice.Mega-Sena {
   margin-right: 10px;
 
   font-style: italic;
@@ -348,7 +348,7 @@ header .leftNav,
   color: #27c383;
 }
 
-.game .gamePreview .gameTypePrice.quina {
+.game .gamePreview .gameTypePrice.Quina {
   margin-right: 10px;
 
   font-style: italic;
@@ -410,17 +410,17 @@ header .leftNav,
   background: #1ea2d6;
 }
 
-/* .newBetContainer .numbersContainer .number.selected.lotofacil {
+/* .newBetContainer .numbersContainer .number.selected.Lotofácil {
   color: #fff;
   background: #7f3992;
 }
 
-.newBetContainer .numbersContainer .number.selected.mega {
+.newBetContainer .numbersContainer .number.selected.Mega-Sena {
   color: #fff;
   background: #01ac66;
 }
 
-.newBetContainer .numbersContainer .number.selected.quina {
+.newBetContainer .numbersContainer .number.selected.Quina {
   color: #fff;
   background: #f79c31;
 } */

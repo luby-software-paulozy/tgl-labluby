@@ -6,6 +6,7 @@
   const betDescriptionContainer = document.querySelector(
     '[data-js="betDescription"]'
   );
+  const titleBetContainer = document.querySelector(".title span");
 
   async function getRules() {
     const res = await fetch("./rules.json");
@@ -24,10 +25,20 @@
 
     const gameTypeActive = Array.from(document.querySelectorAll(".gameType"));
 
-    gameTypeActive[0].classList.add("active");
-    betDescriptionContainer.textContent = types[0].description;
+    const gameType = types.filter(
+      (gameType) => gameType.type === gameTypeActive[0].textContent
+    );
 
+    gameTypeActive[0].classList.add("active");
     numbersContainer.style.display = "grid";
+
+    const title = `<span><strong>NOVA APOSTA</strong> PARA ${gameType[0].type.toUpperCase()}</span>`;
+    titleBetContainer.innerHTML = "";
+    titleBetContainer.innerHTML = title;
+
+    const description = gameType[0].description;
+    betDescriptionContainer.textContent = description;
+
     getRangeCardNumbers(types);
   }
 
@@ -79,6 +90,7 @@
     }
 
     numbersContainer.innerHTML = "";
+    setBetDescription();
     getRangeCardNumbers(types);
   }
 
@@ -98,5 +110,25 @@
     return Array.from(selectedNumbers);
   }
 
+  async function setBetDescription() {
+    const { types } = await getRules();
+    const activeButton = document.querySelector(".active");
+
+    const gameType = types.filter(
+      (gameType) => gameType.type === activeButton.textContent
+    );
+
+    const description = gameType[0].description;
+    const title = `<span><strong>NOVA APOSTA</strong> PARA ${gameType[0].type.toUpperCase()}</span>`;
+
+    betDescriptionContainer.textContent = "";
+    titleBetContainer.innerHTML = "";
+
+    titleBetContainer.innerHTML = title;
+
+    return (betDescriptionContainer.textContent = description);
+  }
+
+  setBetDescription();
   chooseGame();
 })();

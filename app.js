@@ -17,6 +17,7 @@
   const totalPriceContainer = document.querySelector('[data-js="totalPrice"]');
   const totalPriceText = document.querySelector('[data-js="totalPriceCont"]');
   const toastContainer = document.querySelector('[data-js="toast"]');
+  const toggleThemeButton = document.querySelector('[data-js="toggleTheme"]');
 
   let cartGames = [];
 
@@ -320,6 +321,11 @@
     populateCartGame();
   }
 
+  function toggleTheme() {
+    document.body.classList.toggle("dark-theme");
+  }
+
+  toggleThemeButton.addEventListener("click", toggleTheme);
   addToCartButton.addEventListener("click", addGameInCart);
   completeGameButton.addEventListener("click", completeGame);
   clearGameButton.addEventListener("click", clearGame);

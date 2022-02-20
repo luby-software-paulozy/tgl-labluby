@@ -5,12 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/90b9f74700.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
   <title>TGL: Lotery</title>
 </head>
 <body>
   
   <main>
+    <div data-js="toast" class="toast">
+      <span>Selecione mais x números</span>
+      <button>X</button>
+    </div>
+
     <header>
       <div class="leftNav">
         <a href="/" class="logo">TGL</a>
@@ -23,7 +28,7 @@
     </header>
 
     <div class="container">
-      
+
       <div class="newBetContainer">
         <div class="title">
           <span><strong>NOVA APOSTA</strong> FOR MEGA-SENA</span>
@@ -56,19 +61,20 @@
       </div>
 
       <div class="cart">
-        <span class="titleCart">CART</span>
+        <span class="titleCart">CARRINHO</span>
       
         <div class="gamePreviewContainer">
-          <div data-js="gamesContainer" class="game"></div>
+          <div data-js="gamesContainer" class="game">
+            <img data-js="emptyCartImage" class="cartImage" src="./assets/images/emptycart.png" alt="">
+          </div>
         </div>
         <div class="gameTotalPriceContainer">
           <div class="titleCart">
-            <span>CART</span>
-            <span class="totalPrice">TOTAL: <span data-js="totalPrice"></span></span>
+            <span data-js="totalPriceCont" class="totalPrice">TOTAL: <span data-js="totalPrice"></span></span>
           </div>
         </div>
         <div class="saveGameContainer">
-          <span class="saveGame">Save</span>
+          <span class="saveGame">Salvar</span>
           <i class="fa-solid fa-chevron-right"></i>
         </div>
       </div>

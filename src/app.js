@@ -22,7 +22,7 @@
   let cartGames = [];
 
   async function getRules() {
-    const res = await fetch("./rules.json");
+    const res = await fetch("../src/rules.json");
 
     const data = await res.json();
 

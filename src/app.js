@@ -166,16 +166,18 @@
           const missing = maxNumbers - selectedNumbers.length;
 
           for (let i = 0; i < missing; i++) {
-            randomNumbers.push(
-              String(Math.ceil(Math.random() * gameType.range))
-            );
+            let randomNumber = Math.ceil(Math.random() * gameType.range);
+
+            if (randomNumbers.includes(randomNumber)) {
+              i--;
+            } else [randomNumbers.push(randomNumber)];
           }
         }
       }
 
       randomNumbers.forEach((randomNumber) => {
         numbers.forEach((number) => {
-          if (number.textContent === randomNumber) {
+          if (number.textContent === String(randomNumber)) {
             number.classList.add("selected");
           }
         });
@@ -187,16 +189,16 @@
     const clickedElementParent = e.target.parentElement;
 
     cartGamesContainer.removeChild(clickedElementParent);
-    if (cartGames.length > 1) {
-      cartGames.splice(Number(clickedElementParent.id), 1);
-    } else {
-      cartGames.pop();
-    }
+
+    cartGames = cartGames.filter(
+      (game) => game.id !== Number(clickedElementParent.id)
+    );
 
     if (cartGames.length < 1) {
       emptyCartImage.style.display = "block";
       totalPriceText.style.display = "none";
     }
+    console.log(cartGames);
     getTotalPrice();
   }
 
@@ -247,7 +249,9 @@
         : `Faltam ${gameType["max-number"] - selectedNumbers.length} números`;
 
     if (gameType["max-number"] - selectedNumbers.length < 1) {
-      toastContainer.textContent = `Selecione apenas ${gameType["max-number"]} números`;
+      toastContainer.textContent = `Selecione apenas ${
+        gameType["max-number"]
+      } números, remova ${selectedNumbers.length - gameType["max-number"]}`;
     }
 
     toastContainer.classList.add("warning");

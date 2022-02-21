@@ -24,6 +24,14 @@
       "price": 2,
       "max-number": 5,
       "color": "#F79C31"
-    }
+    },
+    {
+      "type": "Lotodificil",
+      "description": "Escolha 3 números dos 25 disponíveis na quina. 2 ou 3 acertos. São seis sorteios semanais e 3 chances de ganhar.",
+      "range": 25,
+      "price": 5.5,
+      "max-number": 3,
+      "color": "#0180C5"
+    }  
   ]
 }

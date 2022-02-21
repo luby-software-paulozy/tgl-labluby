@@ -52,6 +52,10 @@
     const description = gameType[0].description;
     betDescriptionContainer.textContent = description;
 
+    gameTypeActive[0].classList.add("active");
+    gameTypeActive[0].style.background = `${gameType[0].color}`;
+    gameTypeActive[0].style.color = `#fff`;
+
     totalPriceText.style.display = "none";
     getRangeCardNumbers(types);
   }
@@ -60,16 +64,20 @@
     const activeButton = document.querySelector(".active");
     let range = 30;
 
+    const gameType = gameTypes.filter(
+      (gameType) => gameType.type === activeButton.innerText
+    );
+
     gameTypes.forEach((gameType) => {
       if (gameType.type === activeButton.innerText) {
         range = gameType.range;
       }
     });
 
-    createCardNumber(range);
+    createCardNumber(range, gameType);
   }
 
-  function createCardNumber(range) {
+  function createCardNumber(range, gameType) {
     for (let i = 1; i <= range; i++) {
       const number = document.createElement("div");
       number.classList.add("number");
@@ -78,9 +86,19 @@
       number.addEventListener("click", () => {
         const numberClasses = Array.from(number.classList);
 
-        return numberClasses.includes("selected")
+        numberClasses.includes("selected")
           ? number.classList.remove("selected")
           : number.classList.add("selected");
+
+        const selectedNumbers = getSelectedNumbers();
+
+        console.log(gameType);
+
+        if (selectedNumbers.length > gameType[0]["max-number"]) {
+          return showSelectedMuchNumbersToast(
+            `Selecione apenas ${gameType[0]["max-number"]} números, você selecionou ${selectedNumbers.length}`
+          );
+        }
       });
 
       numbersContainer.appendChild(number);
@@ -93,15 +111,33 @@
     const clickedButtonClasses = Array.from(clickedButton.classList);
     const activeButton = document.querySelector(".active");
 
+    const oldGame = types.filter(
+      (gameType) => gameType.type === activeButton.textContent
+    );
+
+    const game = types.filter(
+      (gameType) => gameType.type === clickedButton.textContent
+    );
+
+    console.log(oldGame);
+
     if (activeButton) {
       activeButton.classList.remove("active");
+      activeButton.style.background = "transparent";
+      activeButton.style.color = `${oldGame[0].color}`;
     }
 
-    if (clickedButtonClasses.includes("active")) {
-      clickedButton.classList.remove("active");
-    } else {
+    if (!clickedButtonClasses.includes("active")) {
       clickedButton.classList.add("active");
+      clickedButton.style.background = `${game[0].color}`;
+      clickedButton.style.color = `#fff`;
     }
+
+    // if (clickedButtonClasses.includes("active")) {
+    //   clickedButton.classList.remove("active");
+    // } else {
+    //   clickedButton.classList.add("active");
+    // }
 
     numbersContainer.innerHTML = "";
     setBetDescription();
@@ -114,6 +150,7 @@
     buttonGameType.classList.add("gameType", gameType.type);
     buttonGameType.textContent = gameType.type;
     buttonGameType.style.border = `2px solid ${gameType.color}`;
+    buttonGameType.style.color = `${gameType.color}`;
 
     buttonGameType.addEventListener("click", handleClickGameType);
     return gameTypeContainer.appendChild(buttonGameType);
@@ -213,7 +250,9 @@
       .replace(".", ","))}`;
   }
 
-  function populateCartGame() {
+  async function populateCartGame() {
+    const { types } = await getRules();
+
     const gameInfoContainer = document.createElement("div");
     const trashButton = document.createElement("i");
 
@@ -223,10 +262,20 @@
     trashButton.addEventListener("click", deleteCartGame);
 
     cartGames.forEach(({ numbers, gameType, price, id }) => {
+      const gameColor = types.filter((game) => game.type === gameType);
+
       const HTMLTemplate = `
-      <div class="gamePreview ${gameType}">
+      <div 
+        class="gamePreview ${gameType}" 
+        style="
+          border-left: 4px solid ${gameColor[0].color};"
+      >
         <p class="selectedGame">${numbers}</p>
-        <span class="gameTypePrice ${gameType}">${gameType}</span>
+        <span 
+          class="gameTypePrice" 
+            style="
+              color: ${gameColor[0].color}"
+        >${gameType}</span>
         <span class="priceGame">R$ ${price.toFixed(2).replace(".", ",")}</span>
       </div>
         `;
@@ -265,6 +314,15 @@
     toastContainer.textContent = `Jogo adicionado com sucesso`;
     toastContainer.classList.remove("warning");
     toastContainer.classList.add("success");
+    toastContainer.style.display = "block";
+    setTimeout(() => {
+      toastContainer.style.display = "none";
+    }, 2000);
+  }
+
+  function showSelectedMuchNumbersToast(message) {
+    toastContainer.textContent = message;
+    toastContainer.classList.add("warning");
     toastContainer.style.display = "block";
     setTimeout(() => {
       toastContainer.style.display = "none";

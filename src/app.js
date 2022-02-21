@@ -113,6 +113,7 @@
 
     buttonGameType.classList.add("gameType", gameType.type);
     buttonGameType.textContent = gameType.type;
+    buttonGameType.style.border = `2px solid ${gameType.color}`;
 
     buttonGameType.addEventListener("click", handleClickGameType);
     return gameTypeContainer.appendChild(buttonGameType);

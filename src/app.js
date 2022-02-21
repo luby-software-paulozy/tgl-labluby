@@ -198,7 +198,6 @@
       emptyCartImage.style.display = "block";
       totalPriceText.style.display = "none";
     }
-    console.log(cartGames);
     getTotalPrice();
   }
 
